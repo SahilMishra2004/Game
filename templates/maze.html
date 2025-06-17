@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Maze Game{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/maze.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Maze Game</h1>
+    <div class="maze-info mb-3">
+        <div>Time: <span id="time">0</span>s</div>
+        <div>Moves: <span id="moves">0</span></div>
+    </div>
+    <div class="maze-container">
+        <canvas id="mazeCanvas" width="500" height="500"></canvas>
+    </div>
+    <div class="controls mt-3">
+        <h2 id="won"></h2>
+        <button class="btn btn-danger" id="reset">Reset Game</button>
+        
+    </div>
+    <div class="instructions mt-3">
+        <p>Use arrow keys to navigate to the exit (green square). Avoid walls (black).</p>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/maze.js') }}"></script>
+{% endblock %}

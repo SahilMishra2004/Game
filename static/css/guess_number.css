@@ -1,0 +1,41 @@
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.instructions {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.game-area {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.message {
+    min-height: 50px;
+    margin: 15px 0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.guesses {
+    text-align: center;
+    margin: 15px 0;
+}
+
+#previousGuesses {
+    font-weight: bold;
+    color: #343a40;
+}

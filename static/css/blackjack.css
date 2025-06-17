@@ -1,0 +1,109 @@
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.bet-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.game-area {
+    background-color: #28a745;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.dealer-hand, .player-hand {
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+    min-height: 120px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    position: relative;
+}
+
+.card.red {
+    color: red;
+}
+
+.card::before, .card::after {
+    position: absolute;
+    font-size: 1rem;
+}
+
+.card::before {
+    top: 5px;
+    left: 5px;
+}
+
+.card::after {
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(180deg);
+}
+
+.card.back {
+    background: repeating-linear-gradient(
+        45deg,
+        #dc3545,
+        #dc3545 10px,
+        #bd2130 10px,
+        #bd2130 20px
+    );
+    color: white;
+}
+
+.card.back::before, .card.back::after {
+    content: '';
+}
+
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.message {
+    min-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+#game-controls {
+    display: none;
+}

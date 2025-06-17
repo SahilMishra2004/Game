@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Rock Paper Scissors{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rps.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Rock Paper Scissors</h1>
+    <div class="choices text-center mb-4">
+        <button class="btn btn-lg btn-primary choice" data-choice="rock">✊ Rock</button>
+        <button class="btn btn-lg btn-primary choice" data-choice="paper">✋ Paper</button>
+        <button class="btn btn-lg btn-primary choice" data-choice="scissors">✌️ Scissors</button>
+    </div>
+    <div class="results text-center">
+        <div class="choices-display mb-3">
+            <div>You: <span id="player-choice" class="choice-icon">-</span></div>
+            <div>Computer: <span id="computer-choice" class="choice-icon">-</span></div>
+        </div>
+        <div id="result-text" class="result-text mb-3"></div>
+        <div class="scoreboard">
+            <div>Wins: <span id="wins">0</span></div>
+            <div>Losses: <span id="losses">0</span></div>
+            <div>Ties: <span id="ties">0</span></div>
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <button class="btn btn-danger" id="reset">Reset Game</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/rps.js') }}"></script>
+{% endblock %}

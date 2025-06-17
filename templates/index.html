@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}Game Collection{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container game-collection">
+    <h1 class="text-center my-4">Game Collection</h1>
+    
+    <div class="row g-4">
+        <!-- Rock Paper Scissors -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/rps.jpg') }}" 
+                         class="game-card-img" 
+                         alt="Rock Paper Scissors">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Rock Paper Scissors</h5>
+                    <p class="card-text">Classic hand game against the computer. Choose rock, paper, or scissors!</p>
+                    <a href="{{ url_for('rps') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Paddle Game -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/paddle.jpg') }}" 
+                         class="game-card-img" 
+                         alt="Paddle Game">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Paddle Game</h5>
+                    <p class="card-text">Two-player paddle game. Control with W/S or arrow keys!</p>
+                    <a href="{{ url_for('paddle') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tic Tac Toe -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/tictactoe.jpeg') }}" 
+                         class="game-card-img" 
+                         alt="Tic Tac Toe">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Tic Tac Toe</h5>
+                    <p class="card-text">Classic two-player X and O in a 3x3 grid.</p>
+                    <a href="{{ url_for('tictactoe') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Snake Game -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/snake.jpg') }}" 
+                         class="game-card-img" 
+                         alt="Snake Game">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Snake Game</h5>
+                    <p class="card-text">Guide the snake to eat food and grow longer.</p>
+                    <a href="{{ url_for('snake') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Guess the Number -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/guessnumber.png') }}" 
+                         class="game-card-img" 
+                         alt="Guess the Number">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Guess the Number</h5>
+                    <p class="card-text">Guess the secret number between 1 and 100.</p>
+                    <a href="{{ url_for('guess_number') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wordle -->
+        <div class="col-md-4 col-sm-6">
+            <div class="card h-100 game-card">
+                <div class="game-card-img-container">
+                    <img src="{{ url_for('static', filename='images/wordle.png') }}" 
+                         class="game-card-img" 
+                         alt="Wordle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Wordle</h5>
+                    <p class="card-text">Guess the 5-letter word with color-coded feedback.</p>
+                    <a href="{{ url_for('wordle') }}" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

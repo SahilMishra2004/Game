@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Turtle Race{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/turtle_race.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Turtle Race</h1>
+    <div class="race-container">
+        <canvas id="raceCanvas" width="600" height="400"></canvas>
+    </div>
+    <div class="controls mt-3">
+        <button class="btn btn-primary" id="startRace">Start Race</button>
+        <button class="btn btn-danger" id="reset">Reset</button>
+    </div>
+    <div class="results mt-3" id="results"></div>
+    <div class="instructions mt-3">
+        <p>Click "Start Race" to begin the turtle race. Predict which color turtle will win!</p>
+    </div>
+</div>
+<div class="prediction mb-3">
+    <label for="turtle-prediction">Predict the winner:</label>
+    <select id="turtle-prediction" class="form-select">
+        <option value="red">Red Turtle</option>
+        <option value="blue">Blue Turtle</option>
+        <option value="green">Green Turtle</option>
+        <option value="orange">Orange Turtle</option>
+        <option value="purple">Purple Turtle</option>
+    </select>
+    <button class="btn btn-info mt-2" id="submit-prediction">Submit Prediction</button>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/turtle_race.js') }}"></script>
+{% endblock %}

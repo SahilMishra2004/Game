@@ -1,0 +1,39 @@
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.maze-info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.maze-container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#mazeCanvas {
+    border: 2px solid #343a40;
+    background-color: #f8f9fa;
+    display: block;
+    margin: 0 auto;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.instructions {
+    text-align: center;
+    margin-top: 15px;
+    color: #6c757d;
+}
+#won{
+    color: rgb(45, 182, 43);
+}

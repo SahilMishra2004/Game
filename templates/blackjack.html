@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}Blackjack{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/blackjack.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Blackjack</h1>
+    <div class="game-info mb-3">
+        <div>Dealer's Hand: <span id="dealer-score">?</span></div>
+        <div>Your Hand: <span id="player-score">0</span></div>
+        <div>Balance: $<span id="balance">1000</span></div>
+        <div>Bet: $<span id="bet">0</span></div>
+    </div>
+    <div class="bet-controls mb-3" id="bet-controls">
+        <button class="btn btn-sm btn-outline-primary bet-btn" data-amount="10">$10</button>
+        <button class="btn btn-sm btn-outline-primary bet-btn" data-amount="25">$25</button>
+        <button class="btn btn-sm btn-outline-primary bet-btn" data-amount="50">$50</button>
+        <button class="btn btn-sm btn-outline-primary bet-btn" data-amount="100">$100</button>
+        <button class="btn btn-sm btn-success" id="deal">Deal</button>
+    </div>
+    <div class="game-area">
+        <div class="dealer-hand mb-4">
+            <h5>Dealer</h5>
+            <div class="cards" id="dealer-cards"></div>
+        </div>
+        <div class="player-hand">
+            <h5>You</h5>
+            <div class="cards" id="player-cards"></div>
+        </div>
+    </div>
+    <div class="game-controls mt-3" id="game-controls">
+        <button class="btn btn-primary" id="hit">Hit</button>
+        <button class="btn btn-success" id="stand">Stand</button>
+        <button class="btn btn-warning" id="double">Double</button>
+    </div>
+    <div class="message mt-3" id="message"></div>
+    <div class="text-center mt-3">
+        <button class="btn btn-danger" id="reset">New Game</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/blackjack.js') }}"></script>
+{% endblock %}

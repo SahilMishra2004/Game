@@ -1,0 +1,139 @@
+.game-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.instructions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.instructions .small {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.instructions .correct {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.instructions .present {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.instructions .absent {
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.wordle-board {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.wordle-row {
+    display: flex;
+    gap: 5px;
+}
+
+.wordle-tile {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.wordle-tile.filled {
+    border-color: #868e96;
+    animation: pop 0.1s;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.wordle-tile.correct {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.wordle-tile.present {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: white;
+}
+
+.wordle-tile.absent {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+.keyboard-container {
+    margin-top: 20px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.key {
+    height: 50px;
+    min-width: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.key.wide {
+    min-width: 50px;
+}
+
+.key:hover {
+    background-color: #d1d7dc;
+}
+
+.key.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+.key.present {
+    background-color: #ffc107;
+    color: white;
+}
+
+.key.absent {
+    background-color: #6c757d;
+    color: white;
+}
+
+.message {
+    min-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}

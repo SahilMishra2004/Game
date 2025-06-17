@@ -1,0 +1,28 @@
+.game-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#gameCanvas {
+    border: 2px solid #343a40;
+    background-color: #f8f9fa;
+    display: block;
+    margin: 0 auto;
+}
+
+.score-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.instructions {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}

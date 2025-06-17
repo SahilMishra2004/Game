@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Snake Game{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/snake.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Snake Game</h1>
+    <div class="score-container mb-3">
+        Score: <span id="score">0</span> | 
+        High Score: <span id="highScore">0</span>
+    </div>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="controls mt-3">
+        <button class="btn btn-danger" id="reset">Reset Game</button>
+    </div>
+    <div class="instructions mt-3">
+        <p>Use arrow keys to control the snake. Eat the food (red) to grow.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/snake.js') }}"></script>
+{% endblock %}

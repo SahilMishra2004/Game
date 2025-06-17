@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Guess the Number{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/guess_number.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="game-container">
+    <h1 class="text-center mb-4">Guess the Number</h1>
+    <div class="instructions mb-4">
+        <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+    </div>
+    <div class="game-area">
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" id="guessInput" min="1" max="100" placeholder="Enter your guess">
+            <button class="btn btn-primary" id="submitGuess">Submit</button>
+        </div>
+        <div id="message" class="message"></div>
+        <div class="guesses">
+            <p>Previous guesses: <span id="previousGuesses"></span></p>
+        </div>
+        <div class="text-center mt-3">
+            <button class="btn btn-danger" id="reset">New Game</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/guess_number.js') }}"></script>
+{% endblock %}
