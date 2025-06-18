@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreElement = document.getElementById('score');
     const highScoreElement = document.getElementById('highScore');
     const resetButton = document.getElementById('reset');
-    
+    const up=document.getElementById("up")
+    const Left=document.getElementById("Left")
+    const down=document.getElementById("down")
+    const Right=document.getElementById("Right")
     const gridSize = 20;
     const tileCount = canvas.width / gridSize;
     
@@ -121,7 +124,34 @@ document.addEventListener('DOMContentLoaded', () => {
         generateFood();
         gameLoop();
     }
-    
+    up.addEventListener('click', () => {
+    if (yVelocity !== 1) {
+        xVelocity = 0;
+        yVelocity = -1;
+    }
+});
+
+down.addEventListener('click', () => {
+    if (yVelocity !== -1) {
+        xVelocity = 0;
+        yVelocity = 1;
+    }
+});
+
+Left.addEventListener('click', () => {
+    if (xVelocity !== 1) {
+        xVelocity = -1;
+        yVelocity = 0;
+    }
+});
+
+Right.addEventListener('click', () => {
+    if (xVelocity !== -1) {
+        xVelocity = 1;
+        yVelocity = 0;
+    }
+});
+
     // Keyboard controls
     document.addEventListener('keydown', (e) => {
         // Prevent reversing direction
