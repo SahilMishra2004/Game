@@ -6,12 +6,48 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayer = 'X';
     let gameState = ['', '', '', '', '', '', '', '', ''];
     let gameActive = true;
+
     
     const winningConditions = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
         [0, 4, 8], [2, 4, 6]             // diagonals
     ];
+    // Add this at the beginning of your existing JS
+document.addEventListener('DOMContentLoaded', () => {
+    // Check for dark mode and apply immediately
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDarkMode) {
+        document.querySelector('.board').style.backgroundColor = '#000';
+        document.querySelectorAll('.cell').forEach(cell => {
+            cell.style.backgroundColor = '#000';
+            cell.style.borderColor = '#fff';
+        });
+    }
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.attributeName === 'data-theme') {
+                const isNowDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const board = document.querySelector('.board');
+                const cells = document.querySelectorAll('.cell');
+                
+                board.style.backgroundColor = isNowDark ? '#000' : '#f8f9fa';
+                cells.forEach(cell => {
+                    cell.style.backgroundColor = isNowDark ? '#000' : '#f8f9fa';
+                    cell.style.borderColor = isNowDark ? '#fff' : '#343a40';
+                });
+            }
+        });
+    });
+    
+    observer.observe(document.documentElement, {
+        attributes: true
+    });
+    
+    // Rest of your existing tictactoe.js code...
+});
     
     // Create board cells
     for (let i = 0; i < 9; i++) {

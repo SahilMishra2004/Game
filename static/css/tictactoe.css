@@ -39,3 +39,24 @@
 .winning-cell {
     background-color: #d4edda;
 }
+/* Tic Tac Toe Dark Mode Styles */
+[data-theme="dark"] .board {
+    background-color: #000 !important;
+}
+
+[data-theme="dark"] .cell {
+    background-color: #000 !important;
+    border-color: #fff !important;
+}
+
+[data-theme="dark"] .cell:hover {
+    background-color: #222 !important;
+}
+
+[data-theme="dark"] .status {
+    color: #fff !important;
+}
+
+[data-theme="dark"] .winning-cell {
+    background-color: #004d00 !important;
+}
