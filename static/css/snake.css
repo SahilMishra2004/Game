@@ -1,5 +1,6 @@
 .game-container {
     max-width: 500px;
+    height: 750px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -25,4 +26,9 @@
     margin-top: 15px;
     font-size: 0.9rem;
     color: #6c757d;
+}
+#control{
+    position: absolute;
+    top: 100%;
+    left: 44.5%;
 }
